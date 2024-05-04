@@ -788,6 +788,35 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBacBac extends Schema.CollectionType {
+  collectionName: 'bacs';
+  info: {
+    singularName: 'bac';
+    pluralName: 'bacs';
+    displayName: 'bac';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0628\u0643\u0627\u0644\u0648\u0631\u064A\u0627 \u0633\u0648\u0631\u064A\u0627'>;
+    likes: Attribute.BigInteger & Attribute.Required & Attribute.DefaultTo<'0'>;
+    members: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.DefaultTo<'0'>;
+    date: Attribute.Date & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::bac.bac', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::bac.bac', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMoneyMoney extends Schema.CollectionType {
   collectionName: 'monies';
   info: {
@@ -856,6 +885,72 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiSyrSyr extends Schema.CollectionType {
+  collectionName: 'syrs';
+  info: {
+    singularName: 'syr';
+    pluralName: 'syrs';
+    displayName: 'syr';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0633\u0648\u0631\u064A\u0627\u0646\u0627 \u0627\u0644\u062A\u0639\u0644\u064A\u0645\u064A\u0629'>;
+    likes: Attribute.BigInteger & Attribute.Required & Attribute.DefaultTo<'0'>;
+    members: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.DefaultTo<'0'>;
+    date: Attribute.Date & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::syr.syr', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::syr.syr', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSyreduSyredu extends Schema.CollectionType {
+  collectionName: 'syredus';
+  info: {
+    singularName: 'syredu';
+    pluralName: 'syredus';
+    displayName: 'syredu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0633\u0648\u0631\u064A\u0627\u0646\u0627 \u0627\u0644\u062A\u0639\u0644\u064A\u0645\u064A\u0629'>;
+    likes: Attribute.BigInteger & Attribute.Required & Attribute.DefaultTo<'0'>;
+    members: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.DefaultTo<'0'>;
+    date: Attribute.Date & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::syredu.syredu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::syredu.syredu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -874,8 +969,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::bac.bac': ApiBacBac;
       'api::money.money': ApiMoneyMoney;
       'api::product.product': ApiProductProduct;
+      'api::syr.syr': ApiSyrSyr;
+      'api::syredu.syredu': ApiSyreduSyredu;
     }
   }
 }
