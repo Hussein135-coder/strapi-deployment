@@ -794,6 +794,7 @@ export interface ApiBacBac extends Schema.CollectionType {
     singularName: 'bac';
     pluralName: 'bacs';
     displayName: 'bac';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -807,6 +808,7 @@ export interface ApiBacBac extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<'0'>;
     date: Attribute.Date & Attribute.Required;
+    insta: Attribute.BigInteger & Attribute.Required & Attribute.DefaultTo<'0'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -891,6 +893,7 @@ export interface ApiSyrSyr extends Schema.CollectionType {
     singularName: 'syr';
     pluralName: 'syrs';
     displayName: 'syr';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -904,6 +907,7 @@ export interface ApiSyrSyr extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<'0'>;
     date: Attribute.Date & Attribute.Required;
+    insta: Attribute.BigInteger & Attribute.Required & Attribute.DefaultTo<'0'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -920,6 +924,7 @@ export interface ApiSyreduSyredu extends Schema.CollectionType {
     singularName: 'syredu';
     pluralName: 'syredus';
     displayName: 'syredu';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -933,6 +938,7 @@ export interface ApiSyreduSyredu extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<'0'>;
     date: Attribute.Date & Attribute.Required;
+    insta: Attribute.BigInteger & Attribute.Required & Attribute.DefaultTo<'0'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

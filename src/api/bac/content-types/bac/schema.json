@@ -4,7 +4,8 @@
   "info": {
     "singularName": "bac",
     "pluralName": "bacs",
-    "displayName": "bac"
+    "displayName": "bac",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,6 +29,11 @@
     },
     "date": {
       "type": "date",
+      "required": true
+    },
+    "insta": {
+      "type": "biginteger",
+      "default": "0",
       "required": true
     }
   }

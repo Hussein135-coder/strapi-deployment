@@ -4,7 +4,8 @@
   "info": {
     "singularName": "syredu",
     "pluralName": "syredus",
-    "displayName": "syredu"
+    "displayName": "syredu",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,6 +30,11 @@
     "date": {
       "type": "date",
       "required": true
+    },
+    "insta": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
     }
   }
 }
